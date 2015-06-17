@@ -11,7 +11,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import hero.Hero;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ContextualFightTest {
 
     @Test
