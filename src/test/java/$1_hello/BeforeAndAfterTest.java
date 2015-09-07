@@ -7,9 +7,8 @@ public class BeforeAndAfterTest {
     /**
      * Uruchom ten test i przyjrzyj sie outputowi na konsoli.
      * -- Jaka jest kolejność wywołań metod adnotowanych @BeforeClass, @Before, @AfterClass, @After ?
-     * -- Dlaczego metody @Before i @After sa wywoływane dwa razy, a @BeforeClass, @AfterClass po razie?
-     * -- Dlaczego dwa razy wypisywane jest "test1: 42", mimo że counter jest postinkrementowany w obu
-     * metodach testowych?
+     * -- Ile razy wywołane zostaną metody @Before i @After oraz @BeforeClass, @AfterClass ?
+     * -- Jaką wartość countera wypiszą metody testowe?
      */
     
     private int counter = 42;

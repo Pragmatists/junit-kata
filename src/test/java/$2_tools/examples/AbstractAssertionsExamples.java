@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static $2_tools.examples.Race.*;
 import static com.google.common.collect.Maps.newHashMap;
-import static org.assertj.core.util.Dates.parse;
+import static org.assertj.core.util.DateUtil.parse;
 import static org.assertj.core.util.Lists.newArrayList;
 
 /**

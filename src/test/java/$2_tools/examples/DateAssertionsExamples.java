@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.util.Dates.parse;
+import static org.assertj.core.util.DateUtil.parse;
 
 /**
  * Date assertions examples.<br>

@@ -22,7 +22,7 @@ public class BasicAssertionsExamples extends AbstractAssertionsExamples {
 
 
     @Test
-    public void simple_assertions_examples() {
+    public void simple_assertions_exercise() {
         TolkienCharacter frodo = new TolkienCharacter("Frodo", 33, HOBBIT);
 
         //age is 33
@@ -31,50 +31,55 @@ public class BasicAssertionsExamples extends AbstractAssertionsExamples {
     }
 
     @Test
-    public void meaningful_error_with_test() {
+    public void description_example() {
         // set a bad age to Mr Frodo, just to see how nice is the assertion error message
-        frodo.setAge(33);
+        frodo.setAge(34);
         // you can specify a test description with as() method or describedAs(), it supports String format args
-        assertThat(frodo.age).as("check %s's age", frodo.getName()).isEqualTo(33);
+        assertThat(frodo.age).isEqualTo(33);
+//        assertThat(frodo.age).as("check %s's age", frodo.getName()).isEqualTo(33);
     }
 
     @Test
-    public void meaningful_error_with_test_description_example() {
+    public void meaningful_error_example() {
         // but you still can override the error message if you have a better one :
         final String frodon = "Frodob";
         assertThat(frodo.getName()).as("check Frodo's name")
                 .overridingErrorMessage("Hey my name is Frodo not %s", frodon).isEqualTo(frodon);
-
-        // if you still can override the error message if you have a better one :
-        assertThat(frodo.getName()).overridingErrorMessage("Hey my name is Frodo not (%)").isEqualTo(frodon);
-
     }
 
     @Test
-    public void assert_object_reference_assertions_examples() {
-        //compares objects reference
+    public void assert_object_reference_assertions_exercise() {
         Object jake = new Person("Jake", 43);
         Object sameJake = jake;
-        Object jakeClone = new Person("Jake", 43); // equals to jake but not the same
-        assertThat(jake).isEqualTo(sameJake).isNotEqualTo(jakeClone);
+        Object jakeClone = new Person("Jake", 43);
+
+//      What will be the results of this assertions?
+
+//        assertThat(jake).isEqualTo(sameJake);
+//        assertThat(jake).isEqualTo(jakeClone);
+//        assertThat(jake).isSameAs(jakeClone);
     }
 
     @Test
-    public void better_null_assertions_examples() {
+    public void better_null_assertions_exercise() {
         Object nullObject = null;
         assertThat(nullObject).isEqualTo(null);
+        //find better assertion
+
         Object nonNullObject = new Object();
         assertThat(nonNullObject).isNotEqualTo(null);
+        //find better assertion
     }
 
     @Test
-    public void better_instance_of_assertions_examples() {
+    public void better_instance_of_assertions_exercise() {
+        //find better assertions
         assertThat(gandalf.getClass()).isEqualTo(TolkienCharacter.class);
         assertThat(gandalf.getClass()).isNotEqualTo(Movie.class);
     }
 
     @Test
-    public void assertion_error_message_differentiates_expected_and_actual_persons() {
+    public void assertion_error_message_differentiates_expected_and_actual_persons_example() {
         // Assertion error message is built with toString description of involved objects.
         // Sometimes, objects differs but not their toString description, in that case the error message would be
         // confusing because, if toString returns "Jake" for different objects, isEqualTo would return :
@@ -132,22 +137,7 @@ public class BasicAssertionsExamples extends AbstractAssertionsExamples {
         //assertThat(frodo).isEqualToComparingOnlyGivenFields(sam, "name", "race", "age");
     }
 
-    @Test
-    public void map_contains_examples() throws Exception {
 
-        Map<String, TolkienCharacter> characters = newLinkedHashMap();
-        characters.put(frodo.getName(), frodo);
-        characters.put(galadriel.getName(), galadriel);
-        characters.put(gandalf.getName(), gandalf);
-        characters.put(sam.getName(), sam);
-
-        assertThat(characters).containsOnly(
-                entry(sam.getName(), sam),
-                entry(frodo.getName(), frodo),
-                entry(gandalf.getName(), gandalf),
-                entry(galadriel.getName(), galadriel));
-
-    }
 
 
 }

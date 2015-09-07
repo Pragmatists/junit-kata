@@ -1,5 +1,5 @@
 
-package $2_tools.examples.conversion;
+package $2_tools.examples.junit;
 
 import $2_tools.examples.Person;
 import org.junit.Test;
@@ -9,9 +9,6 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 import static org.junit.Assert.*;
 
-/**
- * This class is just used to check the effect of the script that migrates JUnit assertions to AssertJ assertions.
- */
 public class WithJunitAssertionTest {
 
     @Test

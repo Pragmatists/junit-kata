@@ -71,7 +71,7 @@ public class Hero {
 
     public boolean fight(Hero opponent) {
         if(health == 0 ){
-            throw new DeadException();
+            throw new DeadException("RIP");
         }
         boolean won = this.power > opponent.power;
         if (won) {
@@ -140,5 +140,8 @@ public class Hero {
     }
 
     public class DeadException extends RuntimeException {
+        public DeadException(String message) {
+            super(message);
+        }
     }
 }

@@ -5,15 +5,18 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Map;
 
 import static $2_tools.examples.Ring.*;
+import static com.google.common.collect.Maps.newLinkedHashMap;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.StrictAssertions.entry;
 import static org.assertj.core.util.Arrays.array;
 
 /**
  * Array assertions examples.
  */
-public class ArrayAssertionsExamples extends AbstractAssertionsExamples {
+public class CollectionAssertionsExamples extends AbstractAssertionsExamples {
     @Test
     public void rings_are_not_empty() throws Exception {
         Ring[] elvesRings = array(vilya, nenya, narya);
@@ -81,37 +84,6 @@ public class ArrayAssertionsExamples extends AbstractAssertionsExamples {
         TolkienCharacter[] fellowshipOfTheRingArray = fellowshipOfTheRing.toArray(new TolkienCharacter[0]);
 
         //"Hobbit", "Elf", "Orc"
-    }
-
-    @Test
-    public void subclasses_assertions_examples() {
-        // StringBuilder have same assertions as String
-        String stringBuilder = new String("Frodo");
-        assertThat(stringBuilder).startsWith("Fro").endsWith("do").hasSize(5);
-        assertThat(stringBuilder).contains("rod").doesNotContain("fro");
-        assertThat(stringBuilder).containsOnlyOnce("do");
-    }
-
-    @Test
-    public void number_assertions_examples() throws Exception {
-        // equals / no equals assertions
-        assertThat(sam.age).isEqualTo(38);
-        assertThat(frodo.age).isEqualTo(33).isNotEqualTo(sam.age);
-
-        // <= < > >= assertions
-        assertThat(sam.age).isGreaterThan(frodo.age).isGreaterThanOrEqualTo(38);
-        assertThat(frodo.age).isLessThan(sam.age).isLessThanOrEqualTo(33);
-        assertThat(sam.age).isBetween(frodo.age, gimli.age);
-
-        // shortcuts for assertions : > 0, < 0 and == 0
-        assertThat(frodo.age - frodo.age).isZero();
-        assertThat(frodo.age - sauron.age).isNegative();
-        assertThat(gandalf.age - frodo.age).isPositive();
-
-        assertThat(frodo.age - frodo.age).isNotNegative();
-        assertThat(frodo.age - frodo.age).isNotPositive();
-        assertThat(gandalf.age - frodo.age).isNotNegative();
-        assertThat(frodo.age - sauron.age).isNotPositive();
     }
 
 
