@@ -1,7 +1,6 @@
 
 package $2_tools.examples;
 
-import $2_tools.examples.collections.Fellow;
 import $2_tools.examples.movie.Movie;
 import org.assertj.core.api.Condition;
 import org.assertj.core.api.StrictAssertions;

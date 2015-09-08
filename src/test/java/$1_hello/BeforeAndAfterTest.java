@@ -1,10 +1,7 @@
 package $1_hello;
 
+
 import org.junit.*;
-import org.junit.rules.TestRule;
-import org.junit.rules.Timeout;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
 
 
 public class BeforeAndAfterTest {

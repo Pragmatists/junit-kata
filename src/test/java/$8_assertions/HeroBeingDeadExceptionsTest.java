@@ -2,12 +2,14 @@ package $8_assertions;
 
 import static com.googlecode.catchexception.CatchException.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.StrictAssertions.assertThat;
 import static org.assertj.core.api.ThrowableAssert.catchThrowable;
 import static org.junit.Assert.fail;
 
 import com.googlecode.catchexception.CatchException;
 import hero.Hero;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -19,14 +21,14 @@ public class HeroBeingDeadExceptionsTest {
 
         try {
             hero.fight(anyHero());
-            fail("Exception was not thrown");
+            //Exception was not thrown
         } catch (Hero.DeadException exception) {
-            //expected DeadException
+            assertThat(exception).isInstanceOf(Hero.DeadException.class);
         }
     }
 
     @Ignore
-    @Test(expected = Hero.DeadException.class)
+//    @Test(xxx)
     public void hero_cannot_fight_when_is_dead_v2() throws Exception {
         Hero hero = new Hero().health(0);
 
@@ -34,7 +36,6 @@ public class HeroBeingDeadExceptionsTest {
 
         //exception expected
     }
-
 
     //googlecode.CatchException
     @Ignore
@@ -53,9 +54,9 @@ public class HeroBeingDeadExceptionsTest {
     public void hero_cannot_fight_when_is_dead_v4() {
         Hero hero = new Hero().health(0);
 
-        Throwable thrown = catchThrowable(() -> { hero.fight(anyHero()); });
+        catchThrowable(() -> { hero.fight(anyHero()); });
 
-        assertThat(thrown).isInstanceOf(Hero.DeadException.class).hasMessageContaining("RIP");
+        //assertThat(xxx).isInstanceOf(Hero.DeadException.class).hasMessageContaining("RIP");
     }
 
 
