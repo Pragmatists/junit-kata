@@ -1,20 +1,15 @@
 
 package $2_tools.examples;
 
-import $2_tools.examples.movie.Movie;
 import org.assertj.core.api.Condition;
-import org.assertj.core.api.StrictAssertions;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static $2_tools.examples.Race.HOBBIT;
 import static $2_tools.examples.Race.MAN;
-import static org.assertj.core.api.Assertions.assertThat;
+import static $2_tools.examples.MyAssertions.*;
 
 
 public class CustomAssertionsExamples extends AbstractAssertionsExamples {
@@ -23,10 +18,10 @@ public class CustomAssertionsExamples extends AbstractAssertionsExamples {
     public void custom_assertions_exercise() {
         TolkienCharacter frodo = new TolkienCharacter("Frodo", 33, HOBBIT);
 
-        assertThat(frodo.age).isEqualTo(33);
-        assertThat(frodo.getName()).isEqualTo("Frodo");
-
-//        assertThat(frodo).hasAge(33).hasName("Frodo");
+        assertThat(frodo)
+                .hasAge(33)
+                .hasName("Frodo")
+                .isAHobbit();
     }
 
     @Test
@@ -43,7 +38,10 @@ public class CustomAssertionsExamples extends AbstractAssertionsExamples {
 
     private Condition<? super TolkienCharacter> aHobbit() {
         return new Condition<TolkienCharacter>() {
-
+            @Override
+            public boolean matches(TolkienCharacter value) {
+                return value.getRace()==Race.HOBBIT;
+            }
         };
     }
 

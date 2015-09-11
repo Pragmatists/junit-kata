@@ -1,6 +1,7 @@
 
 package $2_tools.examples.custom;
 
+import $2_tools.examples.Race;
 import $2_tools.examples.TolkienCharacter;
 import org.assertj.core.api.AbstractAssert;
 
@@ -82,4 +83,10 @@ public class TolkienCharacterAssert extends AbstractAssert<TolkienCharacterAsser
         return this;
     }
 
+    public TolkienCharacterAssert isAHobbit() {
+        if(actual.getRace()!= Race.HOBBIT){
+            failWithMessage("Expected to be a Hobbit but was: <%s>",actual.getRace());
+        }
+        return this;
+    }
 }
