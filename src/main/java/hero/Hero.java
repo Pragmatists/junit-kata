@@ -19,6 +19,22 @@ public class Hero {
     private int health = 1;
     private String organization;
 
+    public Hero(String alias, String realFirstName, String realLastName, HeroOrigin origin, List<String> symbols, int numberOfFightsWon, int power, String weapon, int health, String organization) {
+        this.alias = alias;
+        this.realFirstName = realFirstName;
+        this.realLastName = realLastName;
+        this.origin = origin;
+        this.symbols = symbols;
+        this.numberOfFightsWon = numberOfFightsWon;
+        this.power = power;
+        this.weapon = weapon;
+        this.health = health;
+        this.organization = organization;
+    }
+
+    public Hero() {
+    }
+
     public String getAlias() {
         return alias;
     }
@@ -70,7 +86,7 @@ public class Hero {
     }
 
     public boolean fight(Hero opponent) {
-        if(health == 0 ){
+        if (health == 0) {
             throw new DeadException("RIP");
         }
         boolean won = this.power > opponent.power;
@@ -113,7 +129,7 @@ public class Hero {
     @Override
     public String toString() {
         return super.toString() + " [alias=" + alias + ", realFirstName=" + realFirstName + ", realLastName=" + realLastName + ", power=" + power
-                + ", health=" + health + ", symbols=" + symbols+"]";
+                + ", health=" + health + ", symbols=" + symbols + "]";
     }
 
     @Override

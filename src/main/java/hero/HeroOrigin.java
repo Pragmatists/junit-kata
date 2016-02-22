@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 public class HeroOrigin {
 
     public static final HeroOrigin GERMANY = new HeroOrigin(-1, "Germany");
+    public static final HeroOrigin ENGLAND = new HeroOrigin(-1, "England");
 
     private int id;
     private String name;
