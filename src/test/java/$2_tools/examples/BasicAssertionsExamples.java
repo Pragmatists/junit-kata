@@ -1,18 +1,14 @@
 
 package $2_tools.examples;
 
-import $2_tools.examples.movie.Movie;
-import org.assertj.core.util.introspection.IntrospectionError;
+import static $2_tools.examples.Race.*;
+import static org.assertj.core.api.Assertions.*;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import java.util.Map;
-
-import static $2_tools.examples.Race.HOBBIT;
-import static com.google.common.collect.Maps.newLinkedHashMap;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.entry;
+import $2_tools.examples.movie.Movie;
 
 /**
  * Assertions available for all objects.

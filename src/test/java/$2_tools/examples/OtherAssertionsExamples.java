@@ -1,16 +1,13 @@
 
 package $2_tools.examples;
 
-import org.junit.Test;
+import static com.google.common.collect.Maps.*;
+import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.data.MapEntry.entry;
 
-import java.util.Arrays;
 import java.util.Map;
 
-import static $2_tools.examples.Ring.*;
-import static com.google.common.collect.Maps.newLinkedHashMap;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.StrictAssertions.entry;
-import static org.assertj.core.util.Arrays.array;
+import org.junit.Test;
 
 /**
  * Array assertions examples.

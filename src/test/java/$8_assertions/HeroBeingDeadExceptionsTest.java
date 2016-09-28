@@ -1,17 +1,14 @@
 package $8_assertions;
 
-import static com.googlecode.catchexception.CatchException.*;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.StrictAssertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.ThrowableAssert.catchThrowable;
-import static org.junit.Assert.fail;
 
-import com.googlecode.catchexception.CatchException;
-import hero.Hero;
-
-import org.assertj.core.api.Assertions;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import com.googlecode.catchexception.CatchException;
+
+import hero.Hero;
 
 public class HeroBeingDeadExceptionsTest {
 
